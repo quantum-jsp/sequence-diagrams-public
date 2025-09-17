@@ -24,8 +24,8 @@ sequenceDiagram
         Unit ->> Quantum API: All Offers Declined
     end
     opt Docs Required
-        Quantum API ->> Unit: [CWH] Document Required with Category
         loop
+            Quantum API ->> Unit: [CWH] Document Required with Category
             Unit ->> Quantum API: Upload Document
         end
     end
