@@ -13,8 +13,8 @@ sequenceDiagram
         Quantum API ->> Unit: [CWH] Status Updated to Declined
     end 
     opt Docs Required
-        Quantum API ->> Unit: [CWH] Document Required with Category
         loop
+            Quantum API ->> Unit: [CWH] Document Required with Category
             Unit ->> Quantum API: Upload Document
         end
     end
