@@ -12,12 +12,6 @@ sequenceDiagram
     alt 
         Quantum API ->> Unit: [CWH] Status Updated to Declined
     end 
-    opt Docs Required
-        loop
-            Quantum API ->> Unit: [CWH] Document Required with Category
-            Unit ->> Quantum API: Upload Document
-        end
-    end
     Quantum API ->> Unit: [CWH] Offers Available including Disclosures
     Unit ->> Quantum API: An Offer is accepted
     alt
@@ -30,8 +24,7 @@ sequenceDiagram
         end
     end
     Quantum API ->> Unit: [CWH] Contract Available including signing links
-    Quantum API ->> Internal Processes: Document Signed by all Participants
-    Quantum API ->> Unit: [CWH] Status moved to Funding and Booking
+    Quantum API ->> Internal Processes: Document Signed by all Participants (updateQuantumApplicationStatusContractSigned)
     Quantum API ->> Unit: [CWH] Booked
     Quantum API ->> Internal Processes: Account Booked
     Quantum API ->> Unit: [CWH] Account Created
