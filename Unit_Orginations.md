@@ -29,7 +29,6 @@ sequenceDiagram
     Quantum API ->> Unit: [CWH] Contract Available including signing links
     Quantum API ->> Internal Processes: Document Signed by all Participants
     Quantum API --> Unit: Contract Completed (updateQuantumApplicationStatusContractSigned)
-    Quantum API ->> Unit: [CWH] Status updated to In-Review
     Quantum API ->> Internal Processes: Account Booked
     Quantum API ->> Unit: [CWH] Account Created
     
