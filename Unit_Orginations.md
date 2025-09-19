@@ -11,7 +11,8 @@ sequenceDiagram
     Quantum API ->> Unit: [CWH] Status Updated to ReviewInProgress
     alt 
         Quantum API ->> Internal Processes: [CWH] Status Updated to Declined
-        Quantum API ->> Unit: [CWH] @8pm Status Updated to Declined and AAN Link Included
+        Internal Processes ->> Quantum API: @8pm ET Trigger AAN Sends required
+        Quantum API ->> Unit: [CWH] @8pm ET Status Updated to Declined and AAN Link Included
     end 
     Quantum API ->> Unit: [CWH] Offers Available including Disclosures
     Unit ->> Quantum API: An Offer is accepted
