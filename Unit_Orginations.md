@@ -10,12 +10,14 @@ sequenceDiagram
     Quantum API ->> Internal Processes: Retrieve Plaid Transactions
     Quantum API ->> Unit: [CWH] Status Updated to ReviewInProgress
     alt 
-        Quantum API ->> Unit: [CWH] Status Updated to Declined
+        Quantum API ->> Internal Processes: [CWH] Status Updated to Declined
+        Quantum API ->> Unit: [CWH] @8pm Status Updated to Declined and AAN Link Included
     end 
     Quantum API ->> Unit: [CWH] Offers Available including Disclosures
     Unit ->> Quantum API: An Offer is accepted
     alt
         Unit ->> Quantum API: All Offers Declined
+        Quantum API ->> Unit: [CWH] Updates Status to Offers-Declined
     end
     opt Docs Required
         loop
